@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+.sidebar {
+  width: 25%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  text-align: center;
+}
+.tab {
+  width: 100%;
+  display: block;
+}
+.tab a {
+  text-decoration: none;
+}
+.content {
+  margin-left: 25%;
+  text-align: center;
+}
