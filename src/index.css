@@ -12,29 +12,98 @@ code {
     monospace;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+  /* color */
+  --green: #206A5D;
+  --text-black: #3F5059;
+  --bg-grey: #F3F5F7;;
+  /* font size */
+  --title: 36px;
+  --heading: 40px;
+  --sidebar: 20px;
+  --regular: 18px;
+  /* font weight */
+  --medium: 500;
+}
 
 * {
   margin: 0;
-  font-family: "Quicksand";
+  font-family: 'DM Sans', sans-serif;
   color: #333;
 }
 
 .sidebar {
-  width: 25%;
+  width: 257px;
   position: fixed;
   height: 100%;
   overflow: auto;
   text-align: center;
+  padding: 40px 0px;
+  box-shadow: 0px 2px 34px rgba(0, 0, 0, 0.07);
+}
+.sidebar h1 {
+  font-weight: var(--medium);
+  font-size: var(--title);
+  color: var(--green);
+}
+
+.info {
+  margin: 29px auto 35px;
+}
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.name {
+  font-weight: var(--medium);
+  font-size: var(--sidebar);
+}
+
+.tabs {
+  font-weight: var(--medium);
+  font-size: var(--sidebar);
 }
 .tab {
-  width: 100%;
-  display: block;
-}
-.tab a {
   text-decoration: none;
+  width: 100%;
+  margin: 15px 0;
+  display: block;
+  display: flex;
+  align-items: center;
 }
+.vertical-line {
+  /* width: 4px; */
+  border-left: 4px solid var(--green);
+  height: 50px;
+  float: left;
+}
+.tab img {
+  width: 25px;
+  height: auto;
+  color: black;
+  margin-left: 40px;
+}
+.tab-name {
+  margin-left: 10px;
+}
+.logout-button {
+  margin-top: 37vh;
+}
+.logout-text {
+  font-weight: var(--medium);
+  font-size: var(--sidebar);
+  color: var(--green);
+  /* float: left; */
+}
+.logout-button img {
+  /* float: left; */
+}
+
 .content {
   margin-left: 25%;
   text-align: center;
+  background-color: var(--bg-grey);
 }

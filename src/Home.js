@@ -3,7 +3,8 @@ const Home = () => {
         console.log("Plant added!");
     }
     return ( 
-        <button onClick={handleClick}>Add a plant</button>
+        // <button onClick={handleClick}>Add a plant</button>
+        <img src="public/icons/inventory_icon.svg" alt=""/>
      );
 }
  
