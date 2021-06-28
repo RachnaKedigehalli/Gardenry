@@ -6,6 +6,7 @@
   --text-black: #3F5059;
   --bg-grey: #F3F5F7;
   --grey: #9AACB5;
+  --white: #FFFFFF;
   /* font size */
   --title: 36px;
   --heading: 40px;
@@ -155,7 +156,7 @@ flex-grow: 0; */
   padding: 10px 15px;
   background-color: var(--green);
   border-radius: 25px;
-  color: #FFFFFF;
+  color: var(--white);
 }
 
 .horizontal-line{
@@ -164,4 +165,41 @@ flex-grow: 0; */
   height: 1px;
   width: 100%;
   background-color: var(--grey);
+}
+.inventory-content {
+  position: relative;
+  top: 150px;
+}
+/* Space */
+.space {
+  position: relative;
+}
+.space .button {
+  position: absolute;
+  top: 15px;
+  left: -25px;
+}
+.cover-photo {
+  width: 295px;
+  height: 183px;
+}
+.cover-photo img {
+  width: 295px;
+  height: 183px;
+  object-fit: cover;
+}
+.space-details {
+  padding: 20px 0;
+  background-color: var(--white);
+}
+.space-name {
+  font-weight: var(--medium);
+  font-size: var(--sub-heading);
+  color: var(--text-black);
+}
+.num-plants {
+  font-weight: var(--medium);
+  font-size: var(--normal);
+  color: var(--text-black);
+  margin: 5px 0;
 }

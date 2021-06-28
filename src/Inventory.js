@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import search_icon from "./icons/search_icon.svg";
+import Space from "./Space";
 
 const Inventory = () => {
     const [subHeading, setSubHeading] = useState("All your plants ");
@@ -12,11 +13,12 @@ const Inventory = () => {
             </div>
             <div className="above-line">
                 <h2> {subHeading} </h2>
-                <Button text="Add Plant"></Button>
+                <Button text="Add Plant" />
             </div>
             <div className="horizontal-line"></div>
-            <div className="spaces">
-                
+            <div className="inventory-content">
+                {/* <Button text="2 tasks for today" /> */}
+                <Space />
             </div>
         </div>
     );
