@@ -3,6 +3,7 @@ import people_icon from "./icons/people_icon.svg";
 import profile_icon from "./icons/profile_icon.svg";
 import tasks_icon from "./icons/tasks_icon.svg";
 import arrow_green from "./icons/arrow_icon_green.svg";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     const title = "Gardenry";
@@ -16,12 +17,11 @@ const Sidebar = () => {
                 <div className="name">John Doe</div>
             </div>
             <div className="tabs">
-                
-                <a className="tab">
+                <Link to="/inventory" className="tab">
                     <span className="vertical-line" > </span>
                     <img src={inventory_icon} />
                     <div className="tab-name">Inventory</div>
-                </a>
+                </Link>
                 <a className="tab">
                     <span className="vertical-line"> </span>
                     <img src={tasks_icon} />

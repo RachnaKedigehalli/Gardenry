@@ -1,31 +1,22 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 :root {
   /* color */
   --green: #206A5D;
   --text-black: #3F5059;
-  --bg-grey: #F3F5F7;;
+  --bg-grey: #F3F5F7;
+  --grey: #9AACB5;
   /* font size */
   --title: 36px;
   --heading: 40px;
+  --sub-heading: 24px;
   --sidebar: 20px;
-  --regular: 18px;
+  --normal: 18px;
   /* font weight */
   --medium: 500;
+  /* widths */
+  --sidebar-width: 257px;
+  --content-margin: 90px;
 }
 
 * {
@@ -35,7 +26,7 @@ code {
 }
 
 .sidebar {
-  width: 257px;
+  width: var(--sidebar-width);
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -103,7 +94,74 @@ code {
 }
 
 .content {
-  margin-left: 25%;
+  margin-left: var(--sidebar-width);
+  padding: 63px 90px;
   text-align: center;
+  height: 100vh;
   background-color: var(--bg-grey);
+  /* text-align: left; */
+}
+/* inventory */
+.inventory {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* position: absolute; */
+}
+.inventory-heading {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  position: absolute;
+  clear: both;
+}
+.inventory h1 {
+  font-weight: var(--medium);
+  font-size: var(--heading);
+  color: var(--text-black);
+
+  position: static;
+  /* flex: none;
+order: 0;
+flex-grow: 0; */
+/* margin: 0px 18px; */
+}
+.search {
+  position: static;
+  width: 30px;
+  height: auto;
+  margin: 14px 37px;
+}
+.above-line {
+  position: relative;
+  top: 85px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
+.above-line h2 {
+  font-weight: var(--medium);
+  font-size: var(--sub-heading);
+  color: var(--text-black);
+}
+
+.button {
+  font-weight: bold;
+  font-size: var(--normal);
+  padding: 10px 15px;
+  background-color: var(--green);
+  border-radius: 25px;
+  color: #FFFFFF;
+}
+
+.horizontal-line{
+  position: relative;
+  top: 95px;
+  height: 1px;
+  width: 100%;
+  background-color: var(--grey);
 }
