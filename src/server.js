@@ -9,10 +9,16 @@ const app = express();
 const dbURI = "mongodb+srv://rachna:rachnamongo@projects.rxzui.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(result => app.listen(process.env.port || 4000, function(){
-        console.log('listening!');
-    }))
-    .catch(err => console.log(err));
+    .then(() => {
+        console.log("Connected to the database!");
+        app.listen(process.env.port || 4000, function(){
+            console.log('listening!');
+        });
+    })
+    .catch(err => {
+        console.log("Cannot connect to the database!", err);
+        process.exit();
+    });
 
 app.use(express.static('public'));
 
