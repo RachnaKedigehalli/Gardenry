@@ -45,5 +45,5 @@ const plantSchema = new Schema({
     }
 }, { timestamps: true });
 
-const Plant = mongoose.model('plant', plantSchema);
+const Plant = mongoose.model('Plant', plantSchema);
 module.exports = Plant;

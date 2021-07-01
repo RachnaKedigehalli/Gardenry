@@ -13,5 +13,5 @@ const personSchema = new Schema({
     }]
 }, { timestamps: true });
 
-const Person = mongoose.model('space', personSchema);
+const Person = mongoose.model('Person', personSchema);
 module.exports = Person;

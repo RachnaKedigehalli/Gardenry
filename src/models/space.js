@@ -17,9 +17,10 @@ const spaceSchema = new Schema({
     }],
     number: {
         type: Number,
+        default: 1,
         required: true
     }
 }, { timestamps: true });
 
-const Space = mongoose.model('space', spaceSchema);
+const Space = mongoose.model('Space', spaceSchema);
 module.exports = Space;
