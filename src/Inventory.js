@@ -5,6 +5,7 @@ import Space from "./Space";
 
 const Inventory = () => {
     const [subHeading, setSubHeading] = useState("All your plants ");
+    // useEffect();
     return (
         <div className="inventory">
             <div className="inventory-heading">
@@ -17,7 +18,6 @@ const Inventory = () => {
             </div>
             <div className="horizontal-line"></div>
             <div className="inventory-content">
-                {/* <Button text="2 tasks for today" /> */}
                 <Space />
             </div>
         </div>
