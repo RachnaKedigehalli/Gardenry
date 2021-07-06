@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import search_icon from "./icons/search_icon.svg";
 import Space from "./Space";
+import SpacesList from "./SpacesList";
 
 const Inventory = () => {
     const [subHeading, setSubHeading] = useState("All your plants ");
-    // useEffect();
+
+    const [spaces, setSpaces] = useState(null);
+    useEffect(() => {
+        fetch('http://localhost:4000/spaces')
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                setSpaces(data);
+            })
+    }, []);
     return (
         <div className="inventory">
             <div className="inventory-heading">
@@ -18,7 +29,8 @@ const Inventory = () => {
             </div>
             <div className="horizontal-line"></div>
             <div className="inventory-content">
-                <Space />
+                { spaces && <SpacesList spaces = {spaces} />}
+                {/* <Space /> */}
             </div>
         </div>
     );

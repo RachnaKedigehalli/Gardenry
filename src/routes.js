@@ -12,7 +12,7 @@ const space_plants = (req, res, next) => {
 
 // get all spaces in db
 const get_spaces = (req, res, next) => {
-    Space.find()
+    Space.find().populate('plants')
         .then(spaces => res.send(spaces));
 }
 
