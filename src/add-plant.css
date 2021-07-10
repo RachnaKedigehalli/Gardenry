@@ -1,0 +1,29 @@
+.add-plant {
+    width: 634px;
+    padding: 45px 50px 60px 50px;
+    font-weight: var(--medium);
+    background-color: var(--white);
+}
+
+.add-plant-heading {
+    font-weight: var(--medium);
+    font-size: var(--heading);
+    color: var(--text-black);
+    margin-bottom: 55px;
+}
+
+.add-plant label {
+    /* font-weight: var(--medium); */
+    font-size: var(--form-label);
+    color: var(--text-black);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.add-plant input {
+    padding: 15px 15px 15px 20px;
+    font-size: var(--sidebar);
+    color: var(--grey);
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+}
