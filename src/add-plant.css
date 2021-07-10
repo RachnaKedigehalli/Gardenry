@@ -27,3 +27,7 @@
     border: 1px solid var(--grey);
     border-radius: 5px;
 }
+
+.add-plant input:focus {
+    border: 1px solid var(--green);
+}

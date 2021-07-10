@@ -3,7 +3,7 @@ import './add-plant.css';
 
 const AddPlant = () => {
     const [name, setName] = useState('');
-    const [number, setNumber] = useState(1);
+    const [number, setNumber] = useState();
     const [space, setSpace] = useState('');
     const [lastWatered, setLastWatered] = useState(new Date().toLocaleDateString());
     const [wateringInterval, setWateringInterval] = useState();
@@ -35,13 +35,14 @@ const AddPlant = () => {
                 <input
                     type="number"
                     id="plant-number" name="number" required
-                    list="plant-number"
+                    placeholder="1"
+                    list="plant-number-list"
                     value={ number }
                     min="1" max="1000"
                     onChange={(e) => setNumber(e.target.value)}
                 />
-                <datalist id="plant-number">
-                    { Array.from(Array(11).keys()).slice(1).map((i) =>  <option value={i}/> ) }
+                <datalist id="plant-number-list">
+                    { Array.from(Array(50).keys()).slice(1).map((i) =>  <option value={i}/> ) }
                 </datalist>
 
                 <label for="plant-space">Space</label>
@@ -65,10 +66,10 @@ const AddPlant = () => {
                     onChange={ (e) => setLastWatered(e.target.value) }
                 />
 
-                <label>Watering interval</label>
+                <label for="watering-interval">Watering interval</label>
                 <input
                     type="number"
-                    required
+                    id="watering-interval" name="wateringInterval" required
                     placeholder="Select"
                     list="watering-interval-list"
                     value={ wateringInterval }
@@ -79,17 +80,18 @@ const AddPlant = () => {
                     { Array.from(Array(15).keys()).slice(1).map((i) =>  <option value={i}/> ) }
                 </datalist>
 
-                <label>Last manured</label>
+                <label for="last-manured">Last manured</label>
                 <input
                     type="date"
+                    id="last-manured" name="lastManured"
                     value={ lastManured }
                     onChange={ (e) => setLastManured(e.target.value) }
                 />
 
-                <label>Manuring interval</label>
+                <label for="manuring-interval">Manuring interval</label>
                 <input
                     type="number"
-                    required
+                    id="manuring-interval" name="manuringInterval" required
                     placeholder="Select"
                     list="manuring-interval-list"
                     value={ manuringInterval }
@@ -103,17 +105,19 @@ const AddPlant = () => {
                 {/* Image */}
 
                 <label>Tasks assigned to</label>
-                <label>Water</label>
+                <label for="water-task-assigned-to">Water</label>
                 <input
                     type="text"
+                    id="water-task-assigned-to" name="waterAssigned"
                     placeholder="Select"
                     list="persons-list"
                     value={ waterAssigned }
                     onChange={(e) => setWaterAssigned(e.target.value)}
                 />
-                <label>Manure</label>
+                <label for="manure-task-assigned-to">Manure</label>
                 <input
                     type="text"
+                    id="manure-task-assigned-to" name="manureAssigned"
                     placeholder="Select"
                     list="persons-list"
                     value={ manureAssigned }
