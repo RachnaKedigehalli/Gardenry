@@ -3,6 +3,7 @@ import Home from './Home';
 import Inventory from './Inventory';
 import './index.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AddPlant from './AddPlant';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
             </Route>
             <Route path="/inventory">
               <Inventory/>
+            </Route>
+            <Route path="/add-plant">
+              <AddPlant/>
             </Route>
             {/* <Route exact path="/tasks">
               <Tasks/>

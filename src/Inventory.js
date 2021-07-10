@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom"; 
 import Button from "./Button";
 import search_icon from "./icons/search_icon.svg";
 import Space from "./Space";
@@ -6,8 +7,13 @@ import SpacesList from "./SpacesList";
 
 const Inventory = () => {
     const [subHeading, setSubHeading] = useState("All your plants ");
-
     const [spaces, setSpaces] = useState(null);
+    const history = useHistory();
+
+    const addPlant = () => {
+        history.push('/add-plant');
+    }
+
     useEffect(() => {
         fetch('http://localhost:4000/spaces')
             .then(res => {
@@ -17,6 +23,8 @@ const Inventory = () => {
                 setSpaces(data);
             })
     }, []);
+
+
     return (
         <div className="inventory">
             <div className="inventory-heading">
@@ -25,7 +33,7 @@ const Inventory = () => {
             </div>
             <div className="above-line">
                 <h2> {subHeading} </h2>
-                <Button text="Add Plant" />
+                <Button text="Add Plant" onClick = { addPlant }/>
             </div>
             <div className="horizontal-line"></div>
             <div className="inventory-content">

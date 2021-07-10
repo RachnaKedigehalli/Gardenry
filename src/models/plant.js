@@ -25,7 +25,8 @@ const plantSchema = new Schema({
     },
     lastWatered: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        required: [true, 'Last watered date is required']
     },
     manuringInterval: {
         type: Number,
@@ -33,7 +34,8 @@ const plantSchema = new Schema({
     },
     lastManured: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        required: [true, 'Last manured date is required']
     },
     waterAssigned: {
         type: Schema.Types.ObjectId,
