@@ -3,6 +3,7 @@
     padding: 45px 50px 60px 50px;
     font-weight: var(--medium);
     background-color: var(--white);
+    text-align: left;
 }
 
 .add-plant-heading {
@@ -26,8 +27,55 @@
     color: var(--grey);
     border: 1px solid var(--grey);
     border-radius: 5px;
+    width: 100%;
 }
 
 .add-plant input:focus {
     border: 1px solid var(--green);
+}
+.add-plant span {
+    font-size: var(--sidebar);
+}
+.row {
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+.field {
+    text-align: left;
+    flex-grow: 1;
+}
+.field:nth-of-type(2), .field-horizontal:nth-of-type(2){
+    margin-left: 50px;
+}
+#plant-name {
+    width: 303px;
+}
+.field-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.field-horizontal span {
+    margin-left: 25px;
+}
+#watering-interval #manuring-interval {
+    width: 160px;
+}
+.field-horizontal label {
+    margin-bottom: 0;
+    margin-right: 25px;
+}
+
+.add-plant button {
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 5px;
+    width: 226px;
+    height: 60px;
+    border: none;
+    font-weight: var(--bold);
+    font-size: var(--sidebar);
 }

@@ -16,6 +16,7 @@
   --normal: 18px;
   /* font weight */
   --medium: 500;
+  --bold: 700;
   /* widths */
   --sidebar-width: 257px;
   --content-margin: 90px;
@@ -23,6 +24,7 @@
 
 * {
   margin: 0;
+  box-sizing: border-box;
   font-family: 'DM Sans', sans-serif;
   color: #333;
 }
@@ -152,7 +154,7 @@ flex-grow: 0; */
 }
 
 .button {
-  font-weight: bold;
+  font-weight: var(--bold);
   font-size: var(--normal);
   padding: 10px 15px;
   background-color: var(--green);
