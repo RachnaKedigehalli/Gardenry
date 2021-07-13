@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './add-plant.css';
 
 const AddPlant = () => {
@@ -12,12 +12,32 @@ const AddPlant = () => {
     const [waterAssigned, setWaterAssigned] = useState('');
     const [manureAssigned, setManureAssigned] = useState('');
 
-    const spaces = ['adas', 'asd', 'efw'];
+    const [spacesNames, setSpacesNames] = useState(null);
+    //  ['adas', 'asd', 'efw'];
     const persons = ['adas', 'asd', 'efw'];
-// autocomplete=”off”----The “off” state tells the browser neither to store the value entered for
-//   this input nor to suggest previously entered values. This should be
-//   used if the data is sensitive or the value will never be reused.
+    const [spaces, setSpaces] = useState(null);
+    // autocomplete=”off”----The “off” state tells the browser neither to store the value entered for
+    //   this input nor to suggest previously entered values. This should be
+    //   used if the data is sensitive or the value will never be reused.
     
+    useEffect(()=>{
+        if (spaces) {
+            var arr = [];
+            spaces.map((space) => arr.push(space.name));
+            setSpacesNames(arr);
+        }
+    }, [spaces]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/spaces')
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                setSpaces(data);
+            })
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const plant = {name, number, space, /*image,*/ 
@@ -80,7 +100,7 @@ const AddPlant = () => {
                             onChange={(e) => setSpace(e.target.value)}
                         />
                         <datalist id="spaces-list">
-                            { spaces.map((space) => <option value={space}/> )}
+                            { spacesNames.map((space) => <option value={space}/> )}
                         </datalist>
                     </div>
                 </div>
