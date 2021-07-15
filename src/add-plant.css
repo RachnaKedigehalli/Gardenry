@@ -79,3 +79,48 @@
     font-weight: var(--bold);
     font-size: var(--sidebar);
 }
+
+.drop-container {
+    border: 2px var(--grey) dashed;
+    border-radius: 5px;
+    height: 355px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    font-size: var(--sidebar);
+    justify-content: center;
+}
+.drop-message {
+    color: var(--grey);
+    text-align: center;
+}
+.drop-message span {
+    color: var(--green);
+}
+.image-preview {
+    text-align: center;
+}
+.image-preview img {
+    object-fit: cover;
+    width: 240px;
+    height: 240px;
+}
+.image-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+}
+.image-description span {
+    color: var(--text-black);
+}
+.image-description img {
+    width: 24px;
+    height: auto;
+    margin-left: 18px;
+}
+.image-description img:hover {
+    cursor: pointer;
+}

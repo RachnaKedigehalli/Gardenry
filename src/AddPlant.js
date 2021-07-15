@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import './add-plant.css';
+import ImageDrop from "./ImageDrop";
 
 const AddPlant = () => {
     const [name, setName] = useState('');
@@ -100,7 +101,7 @@ const AddPlant = () => {
                             onChange={(e) => setSpace(e.target.value)}
                         />
                         <datalist id="spaces-list">
-                            { spacesNames.map((space) => <option value={space}/> )}
+                            { spacesNames && spacesNames.map((space) => <option value={space}/> )}
                         </datalist>
                     </div>
                 </div>
@@ -169,7 +170,7 @@ const AddPlant = () => {
                 </div>
                 
                 <div className="row">
-                    {/* Image */}
+                    <ImageDrop />
                 </div>
                 
 
