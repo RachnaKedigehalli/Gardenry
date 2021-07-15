@@ -91,6 +91,9 @@
     font-size: var(--sidebar);
     justify-content: center;
 }
+/* .drop-container:hover {
+    cursor: pointer;
+} */
 .drop-message {
     color: var(--grey);
     text-align: center;
@@ -123,4 +126,7 @@
 }
 .image-description img:hover {
     cursor: pointer;
+}
+.file-input {
+    display: none;
 }

@@ -6,6 +6,7 @@ const ImageDrop = () => {
     const [imgFile, setImgFile] = useState(null);
     const imageRef = useRef();
     const fileInputRef = useRef();
+    const [style, setStyle] = useState({'cursor': 'pointer'});
 
     const dragOver = (e) => {
         e.preventDefault();
@@ -25,6 +26,16 @@ const ImageDrop = () => {
         console.log(files);
         if (files.length) {
             handleFiles(files);
+        }
+    }
+
+    const handleFileInput = () => {
+        fileInputRef.current.click();
+    }
+
+    const fileSelected = () => {
+        if (fileInputRef.current.files.length) {
+            handleFiles(fileInputRef.current.files);
         }
     }
 
@@ -59,12 +70,13 @@ const ImageDrop = () => {
         reader.onload = function(e) {
             imageRef.current.src = e.target.result;
         }
+        setStyle({});
     }
 
-    const removeImage = () => {
+    const removeImage = (e) => {
         setImgFile(null);
+        e.stopPropagation();
     }
-
 
     return (
         <div className="drop-container"
@@ -73,7 +85,14 @@ const ImageDrop = () => {
             onDragLeave={dragLeave}
             onDrop={fileDrop}
             onClick={handleFileInput}
+            style={style}
         >
+            <input
+                ref={fileInputRef}
+                className="file-input"
+                type="file"
+                onChange={fileSelected}
+            />
             {!imgFile && 
             <div className="drop-message">
             Drop an image of the plant here, or select <span>click to browse</span>
