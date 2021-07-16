@@ -24,15 +24,36 @@
 .add-plant input {
     padding: 15px 15px 15px 20px;
     font-size: var(--sidebar);
-    color: var(--grey);
+    color: var(--text-black);
     border: 1px solid var(--grey);
     border-radius: 5px;
     width: 100%;
 }
-
-.add-plant input:focus {
-    border: 1px solid var(--green);
+.add-plant input::placeholder {
+    color: var(--grey);
 }
+.add-plant input[type="date"]::-webkit-input-placeholder {
+    color: var(--grey);
+}
+.add-plant input:focus {
+    outline: none;
+    border: 1px solid var(--green);
+    box-shadow: 0 0 2px var(--green);
+    color: var(--text-black);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.6;
+    filter: invert(0.8);
+  }
+  
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1
+  }
+
 .add-plant span {
     font-size: var(--sidebar);
 }
